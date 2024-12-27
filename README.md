@@ -1,4 +1,5 @@
-React app built using React, React Router, Redux Toolkit, React Query, Axios and Tailwind CSS which uses Strapi Api
+## React App
+Built using React, React Router, Redux Toolkit, React Query, Axios and Tailwind CSS which uses Strapi Api
 
 ## Useful Project Resources
 
