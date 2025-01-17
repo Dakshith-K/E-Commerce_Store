@@ -4,6 +4,7 @@ import { customFetch } from "../utils";
 import { toast } from "react-toastify";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
+import login from "../assets/login.svg"
 
 export const action =
   (store) =>
@@ -46,24 +47,58 @@ const Login = () => {
 
   return (
     <section className="h-screen grid place-items-center">
-      <Form method="post" className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4">
-        <h4 className="text-center text-3xl font-bold">Login</h4>
-        <FormInput type="email" label="email" name="identifier" />
-        <FormInput type="password" label="password" name="password" />
-        <div className="mt-4">
-          <SubmitBtn text="Login" />
+      <div className="hidden md:flex w-full">
+        <div className="grid flex-grow place-items-center">
+          <Form method="post" className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4">
+            <h4 className="text-center text-3xl font-bold">Login</h4>
+            <FormInput type="email" label="email" name="identifier" />
+            <FormInput type="password" label="password" name="password" />
+            <div className="mt-4">
+              <SubmitBtn text="Login" />
+            </div>
+            <button type="button" className="btn btn-secondary btn-block capitalize" onClick={loginAsGuestUser}>
+              guest user
+            </button>
+            <p className="text-center">
+              Not a member yet?{''}
+              <Link to="/register" className="ml-2 link link-hover link-primary capitalize">
+                register
+              </Link>
+            </p>
+          </Form>
         </div>
-        <button type="button" className="btn btn-secondary btn-block capitalize" onClick={loginAsGuestUser}>
-          guest user
-        </button>
-        <p className="text-center">
-          Not a member yet?{''}
-          <Link to="/register" className="ml-2 link link-hover link-primary capitalize">
-            register
-          </Link>
-        </p>
-      </Form>
-    </section>
+        <div className="divider divider-horizontal"></div>
+        <div className="visible md:grid h-20 flex-grow place-items-center">
+          <img src={login} alt="login" className="h-2/3" />
+        </div>
+      </div>
+
+      <div className="md:hidden flex w-full flex-col">
+        <div className="grid place-items-center">
+          <img src={login} alt="login" className="h-2/3" />
+        </div>
+
+        <div className="grid place-items-center">
+          <Form method="post" className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4">
+            <h4 className="text-center text-3xl font-bold">Login</h4>
+            <FormInput type="email" label="email" name="identifier" />
+            <FormInput type="password" label="password" name="password" />
+            <div className="mt-4">
+              <SubmitBtn text="Login" />
+            </div>
+            <button type="button" className="btn btn-secondary btn-block capitalize" onClick={loginAsGuestUser}>
+              guest user
+            </button>
+            <p className="text-center">
+              Not a member yet?{''}
+              <Link to="/register" className="ml-2 link link-hover link-primary capitalize">
+                register
+              </Link>
+            </p>
+          </Form>
+        </div>
+      </div>
+    </section >
   )
 }
 
