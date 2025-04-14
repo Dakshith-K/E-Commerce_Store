@@ -2,7 +2,7 @@ import { FormInput, SubmitBtn } from '../components';
 import { Form, Link, redirect } from 'react-router-dom';
 import { customFetch } from '../utils';
 import { toast } from 'react-toastify';
-import signup from "../assets/signup.svg"
+import signup from "../assets/signup.webp"
 
 export const action = async ({ request }) => {
   const formData = await request.formData();

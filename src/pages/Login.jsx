@@ -4,7 +4,7 @@ import { customFetch } from "../utils";
 import { toast } from "react-toastify";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
-import login from "../assets/login.svg"
+import login from "../assets/login.webp"
 
 export const action =
   (store) =>
